@@ -1,0 +1,4 @@
+black ~= 23.1
+mypy == 1.0
+pylint ~= 2.16
+python-gnupg ~= 0.5.0
