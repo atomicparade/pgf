@@ -56,10 +56,17 @@ content_filter = pgf
 # END_ADDED_BY_PGF
 END_POSTFIX_MAIN_CF
 
+echo "`date -Iseconds | sed -E 's/([[:digit:]]{2}):([[:digit:]]{2})$/\1\2/'` [INFO    ] pgf installed." >>/var/log/pgf.log
+
 set +o xtrace
 
-echo "Installation complete."
-echo "Please:"
-echo "    1) Restart Postfix to load pgf as a content filter."
-echo "    2) Install PGP keys for user pgf by running:"
-echo "        sudo -u pgf gpg --homedir /var/lib/pgf --search-keys USER@DOMAIN.COM"
+cat <<'DONE_TEXT'
+Installation complete.
+
+Please restart Postfix to load pgf as a content filter.
+
+Please install PGP keys for user pgf by running:
+    sudo -u pgf gpg --homedir /var/lib/pgf --search-keys USER@DOMAIN.COM
+
+You can edit the configuration file at: /etc/pgf.conf
+DONE_TEXT

@@ -33,7 +33,7 @@ class Pgf:
     def init_logger(self) -> None:
         """Initialize logging."""
         formatter = logging.Formatter(
-            "%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
+            "%(asctime)s [%(levelname)-8s] %(message)s", datefmt="%Y-%m-%dT%H:%M:%S%z"
         )
 
         handler = logging.FileHandler(self.log_file)
@@ -155,10 +155,7 @@ class Pgf:
 
             self.logger.info("%s", original_recipients_note)
 
-            payload = (
-                f"{original_recipients_note}\n\n"
-                f"{payload}"
-            )
+            payload = f"{original_recipients_note}\n\n" f"{payload}"
 
             self.send_mail(mail, payload, self.recipient_override)
         else:
