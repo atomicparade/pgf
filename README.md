@@ -31,7 +31,7 @@ This script:
 2. Creates a directory at `/var/lib/pgf` for storing GPG keys
 3. Creates a log file at `/var/log/pgf.log`
 4. Copies `pgf.py` to `/usr/local/bin/pgf`
-5. Copys `pgf.conf` to `/etc/pgf.conf`
+5. Copies `pgf.conf` to `/etc/pgf.conf`
 6. Adds configuration for pgf to `/etc/postfix/master.cf` and `/etc/postfix/main.cf`
 
 
