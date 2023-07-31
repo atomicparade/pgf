@@ -56,7 +56,7 @@ content_filter = pgf
 # END_ADDED_BY_PGF
 END_POSTFIX_MAIN_CF
 
-echo "`date -Iseconds | sed -E 's/([[:digit:]]{2}):([[:digit:]]{2})$/\1\2/'` [INFO    ] pgf installed." >>/var/log/pgf.log
+echo "$(date -Iseconds | sed -E 's/([[:digit:]]{2}):([[:digit:]]{2})$/\1\2/') [INFO    ] pgf installed." >>/var/log/pgf.log
 
 set +o xtrace
 
